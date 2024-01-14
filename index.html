@@ -7,19 +7,22 @@
 <body>
     <!--Add a heading for the page to indicate the name of the webpage-->
     <h1>Etch-a-Sketch</h1>
-    <!--Add a container used for placing a grid based on row by column-->
-    <div id="grid-container">
-    </div>
-    <!--Add a container to group all the features that users can do-->
-    <div id="additional-features">
-        <!--Add a bar used for adjusting rows and columns in the grid-->
-        <input type="range" name="adjust-grid" value="16" min="16" max="100"/>
-        <!--Add an eraser button that shows the eraser icon that changes colour back to white-->
-        <button id="eraser">Eraser</button>
-        <!--Add a colour palette button where user can pick a colour they want to prefer to colour or sketch-->
-        <input type="color" id="color"/>
-        <!--Add a clear button to set all colours of the grid to white-->
-        <button id="clear">Clear</button>
+    <!--Add a div element that groups the grid and additional features-->
+    <div class="features">
+        <!--Add a container used for placing a grid based on row by column-->
+        <div id="grid-container">
+        </div>
+        <!--Add a container to group all the features that users can do-->
+        <div id="additional-features">
+            <!--Add a bar used for adjusting rows and columns in the grid-->
+            <input type="range" name="adjust-grid" value="16" min="16" max="100"/>
+            <!--Add an eraser button that shows the eraser icon that changes colour back to white-->
+            <button id="eraser">Eraser</button>
+            <!--Add a colour palette button where user can pick a colour they want to prefer to colour or sketch-->
+            <input type="color" id="color"/>
+            <!--Add a clear button to set all colours of the grid to white-->
+            <button id="clear">Clear</button>
+        </div>
     </div>
     <!--Add a paragraph at the bottom of the grid instructing the user to draw a pixelated image-->
     <p id="message">Draw Here!</p>
