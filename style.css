@@ -38,6 +38,7 @@ h1{
     display: flex;
     flex-direction: column;
     flex: 1;
+    min-width: 265px;
 }
 
 /* Stylize the instruction located at the bottom of the sketchpad */
@@ -48,7 +49,7 @@ h1{
 
 /* Stylize the range slider*/
 input[type="range"] {
-    appearance: slider-vertical;
+    flex:3;
 }
 
 /*Stylize the grouping selectors for the eraser button and color picker*/
@@ -60,12 +61,13 @@ input[type="range"] {
 
 /*Stylize the color picker*/
 #color {
-    height: 50px;
+    height: 55px;
+    padding: 5px;
 }
-
 /*Stylize the label element*/
 label{
     font-size: 18px;
+    text-align: center;
 }
 
 /*Stylize the clear button*/
@@ -73,4 +75,28 @@ label{
     margin: 10px 0px;
     padding: 5px;
     font-size: 20px;
+}
+/*Stylize the container used to group the minimum value, maximum value and the slider*/
+.group-range {
+    display: flex;
+}
+
+/*Stylize the embedded element of the button*/
+.blank {
+    padding: 20px;
+}
+
+/*Stylize the span element showing the minimum number in the range slider*/
+span#min {
+    padding-right: 3px;
+}
+
+/*Stylize the span element showing the maximum number in the range slider*/
+span#max {
+    padding-left: 3px;
+}
+
+/*Stylize the range slider, buttons and colour picker*/
+input[type="range"], input[type="color"], button{
+    cursor:pointer;
 }
