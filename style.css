@@ -18,3 +18,30 @@ h1{
     text-align: center;
     font-size: 46px;
 }
+
+/* Stylize the containers for interactive features */
+.features {
+    display: flex;
+    flex-direction: row;
+    height: 600px;
+}
+
+/* Stylize the sketchpad */
+#grid-container {
+    flex: 3;
+    margin-left: 328px;
+    margin-right: 50px;
+}
+
+/* Stylize the supplemental features adjacent to the sketchpad */
+#additional-features {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+}
+
+/* Stylize the instruction located at the bottom of the sketchpad */
+#message {
+    text-align: center;
+    font-size: 36px;
+}
