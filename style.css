@@ -45,3 +45,32 @@ h1{
     text-align: center;
     font-size: 36px;
 }
+
+/* Stylize the range slider*/
+input[type="range"] {
+    appearance: slider-vertical;
+}
+
+/*Stylize the grouping selectors for the eraser button and color picker*/
+#eraser, #color {
+    padding: 5px;
+    width: 60px;
+    margin: 30px auto 10px;
+}
+
+/*Stylize the color picker*/
+#color {
+    height: 50px;
+}
+
+/*Stylize the label element*/
+label{
+    font-size: 18px;
+}
+
+/*Stylize the clear button*/
+#clear {
+    margin: 10px 0px;
+    padding: 5px;
+    font-size: 20px;
+}
