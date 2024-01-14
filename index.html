@@ -15,12 +15,16 @@
         </div>
         <!--Add a container to group all the features that users can do-->
         <div id="additional-features">
+            <!--Add a span to indicate the minimum value-->
+            <span id="min">16 X 16</span>
             <!--Add a bar used for adjusting rows and columns in the grid-->
             <input type="range" name="adjust-grid" value="16" min="16" max="100"/>
+            <!--Add a span to indicate maximum value-->
+            <span id="max">100 X 100</span>
             <!--Add an eraser button that shows the eraser icon that changes colour back to white-->
-            <button id="eraser">Eraser</button>
+            <button id="eraser"><div class="blank"></div></button><label>Eraser</label>
             <!--Add a colour palette button where user can pick a colour they want to prefer to colour or sketch-->
-            <input type="color" id="color"/>
+            <input type="color" id="color"/><label>Colour Palette</label>
             <!--Add a clear button to set all colours of the grid to white-->
             <button id="clear">Clear</button>
         </div>
