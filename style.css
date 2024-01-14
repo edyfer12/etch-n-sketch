@@ -12,3 +12,9 @@ body {
     flex-direction: column;
     min-height:100vh;
 }
+
+/* Stylize the heading */
+h1{
+    text-align: center;
+    font-size: 46px;
+}
