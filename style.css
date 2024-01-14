@@ -5,3 +5,9 @@
     padding: 0;
     box-sizing: border-box;
 }
+
+/* Stylize the body element */
+body {
+    display: flex;
+    flex-direction: column;
+}
