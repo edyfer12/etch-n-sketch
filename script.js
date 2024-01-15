@@ -4,6 +4,7 @@
 */
 //Capture the reference for the range slider
 const rangeSlider = document.querySelector('input[type="range"]');
+//Capture the reference of the paragraph element that shows the grid numbers as user drags the range slider thumb
 //When user clicks the button on the range slider, 
 rangeSlider.addEventListener('input', () => {
     //display the text content on the created element as current value of row multiplied by current value of column
