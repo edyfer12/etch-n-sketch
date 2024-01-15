@@ -34,6 +34,8 @@ let gridValue = rangeSlider.value;
 //2. Ensure the number of grids on each row and column displayed evenly on the sketchpad based on the value of range slider
 //Set the initial counter to 0 where it indicates the start of the row
 let rowCounter = 0; 
+//Refer to the sketchpad
+const sketchpad = document.querySelector('#sketchpad');
 //Loop from row 0 to a value of rows in the range slider value
 for(;rowCounter < gridValue;){
     //Create the row element 
@@ -42,13 +44,24 @@ for(;rowCounter < gridValue;){
     sketchpad.appendChild(row);
     //Set the flex property of row element as 1 that is evenly scaled within the sketchpad
     row.style.flex = '1';
+    //Set the class for the row element as row
+    row.classList = 'row';
     //Set the initial counter to 0 where it indicates the start of the column for each row
+    let colCounter = 0;
     //Loop from column 0 to the value of the range slider
+    for(;colCounter < gridValue;){
 //3. Display the borders in black colour of 0.5 pixels for the grids
         //Create grid element
+        const grid = document.createElement('div');
         //Display grid element
+        sketchpad.appendChild(grid);
         //Set the flex property of grid element to 1 that is even scaled within the row element
+        grid.style.flex = '1';
+        //Set the class for the column element
+        grid.classList = 'grid'
         //Increment counter by 1 to create next grid element
+        colCounter++;
+    }
     //Increment counter by 1 to create next row element
     rowCounter++;
 }
