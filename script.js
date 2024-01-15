@@ -11,3 +11,12 @@ rangeSlider.addEventListener('input', () => {
     //display the text content on the created element as current value of row multiplied by current value of column
     gridInput.textContent = rangeSlider.value + 'X' + rangeSlider.value;
 });
+
+/* 
+    When the user clicks and hold on the individual grids in a sketchpad, colour changes go from white 
+    (default) to black to indicate that the image is drawn in pixelated style or coloured.
+*/
+//Capture the reference based on the sketchpad container containing rows and columns of grids
+//Create an element based on one row and one column of the grid inside the sketchpad
+//Append the element displaying grid of square as the child element to the parent element, the sketchpad
+//When user clicks on the grid inside the sketchpad, change the background colour from white to black
