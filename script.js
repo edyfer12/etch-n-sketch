@@ -17,6 +17,10 @@ rangeSlider.addEventListener('input', () => {
     (default) to black to indicate that the image is drawn in pixelated style or coloured.
 */
 //Capture the reference based on the sketchpad container containing rows and columns of grids
+const sketchpad = document.querySelector('#sketchpad');
 //Create an element based on one row and one column of the grid inside the sketchpad
+const grid = document.createElement('div');
 //Append the element displaying grid of square as the child element to the parent element, the sketchpad
+sketchpad.appendChild(grid);
 //When user clicks on the grid inside the sketchpad, change the background colour from white to black
+grid.addEventListener('click',() => grid.style.background = 'black');
