@@ -16,6 +16,7 @@ rangeSlider.addEventListener('input', () => {
     When the user clicks and hold on the individual grids in a sketchpad, colour changes go from white 
     (default) to black to indicate that the image is drawn in pixelated style or coloured.
 */
+//*********************************(1,1) DEFAULT ROW,COLUMN***********************************************************/
 //Capture the reference based on the sketchpad container containing rows and columns of grids
 const sketchpad = document.querySelector('#sketchpad');
 //Create an element based on one row and one column of the grid inside the sketchpad
@@ -24,3 +25,12 @@ const grid = document.createElement('div');
 sketchpad.appendChild(grid);
 //When user clicks on the grid inside the sketchpad, change the background colour from white to black
 grid.addEventListener('click',() => grid.style.background = 'black');
+
+/***************** ALGORITHM FOR SKETCHING THE PIXELATED IMAGE OR COLOURING ON THE SKETCHPAD *************************/
+
+//1. As a default, have the row as 1 and column as 1 as the default grid value on the range slider is 1 X 1
+//2. Have the number of grids on each row and column displayed evenly on the sketchpad based on the value of range slider
+//3. Display the borders in black colour of 0.5 pixels for the grids
+//4. If the user clicks and holds on the grid that is not clicked and moves around, change the background color to black 
+//5. If the user changes the value on the range slider, reset the sketchpad replacing all black grids back to white grids
+//6. Display the rows and columns based on chosen number of grids on the sketchpad
