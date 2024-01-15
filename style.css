@@ -76,6 +76,7 @@ label{
     margin: 10px 0px;
     padding: 5px;
     font-size: 20px;
+    border-radius: 7.5px;
 }
 /*Stylize the container used to group the minimum value, maximum value and the slider*/
 .group-range {
@@ -107,4 +108,15 @@ img{
     width: 100%;
     height: 100%;
     border-radius: 65px;
+}
+
+/*Stylize the eraser button*/
+#eraser {
+    border: none;
+    background: none;
+}
+
+/*Stylize the subheading*/
+h4 {
+    text-align: center;
 }
