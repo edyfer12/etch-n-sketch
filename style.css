@@ -100,3 +100,10 @@ span#max {
 input[type="range"], input[type="color"], button{
     cursor:pointer;
 }
+
+/*Stylize the image located within the button*/
+img{
+    width: 100%;
+    height: 100%;
+    border-radius: 65px;
+}
