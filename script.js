@@ -30,12 +30,18 @@ grid.addEventListener('click',() => grid.style.background = 'black');*/
 
 //1. As a default, have the row as 1 and column as 1 as the default grid value on the range slider is 1 X 1
 //Refer to the value of the range slider
+let gridValue = rangeSlider.value;
 //2. Ensure the number of grids on each row and column displayed evenly on the sketchpad based on the value of range slider
-//Set the initial counter to 0 where it indicates the start of the row 
+//Set the initial counter to 0 where it indicates the start of the row
+let rowCounter = 0; 
 //Loop from row 0 to a value of rows in the range slider value
+for(;rowCounter < gridValue;){
     //Create the row element 
+    const row = document.createElement('div');
     //Display the row element 
+    sketchpad.appendChild(row);
     //Set the flex property of row element as 1 that is evenly scaled within the sketchpad
+    row.style.flex = '1';
     //Set the initial counter to 0 where it indicates the start of the column for each row
     //Loop from column 0 to the value of the range slider
 //3. Display the borders in black colour of 0.5 pixels for the grids
@@ -44,6 +50,8 @@ grid.addEventListener('click',() => grid.style.background = 'black');*/
         //Set the flex property of grid element to 1 that is even scaled within the row element
         //Increment counter by 1 to create next grid element
     //Increment counter by 1 to create next row element
+    rowCounter++;
+}
 //4. If the user clicks and holds on the grid that is not clicked and hovers, change the background color to black 
 //Exit loop
 //Use event listener on the grid and set event to mousedown
