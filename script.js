@@ -36,8 +36,6 @@ let gridValue = rangeSlider.value;
 let rowCounter = 0; 
 //Refer to the sketchpad
 const sketchpad = document.querySelector('#sketchpad');
-//Create grid element
-const grid = document.createElement('div');
 //Loop from row 0 to a value of rows in the range slider value
 for(;rowCounter < gridValue;){
     //Create the row element 
@@ -53,27 +51,33 @@ for(;rowCounter < gridValue;){
     //Loop from column 0 to the value of the range slider
     for(;colCounter < gridValue;){
 //3. Display the borders in black colour of 0.5 pixels for the grids
-        
+        //Create grid element
+        const grid = document.createElement('div');
         //Display grid element
         row.appendChild(grid);
         //Set the flex property of grid element to 1 that is even scaled within the row element
         grid.style.flex = '1';
         //Set the class for the column element
-        grid.classList = 'grid'
+        grid.classList = 'grid';
         //Increment counter by 1 to create next grid element
         colCounter++;
     }
+    //row.appendChild(grid);
     //Increment counter by 1 to create next row element
     rowCounter++;
 }
 //4. If the user clicks and holds on the grid that is not clicked and hovers, change the background color to black 
 //Exit loop
 //Use event listener on the grid and set event to mousedown
-grid.addEventListener('mousedown', () => grid.style.background = 'black');
+grid.addEventListener('mousedown', () => {
     //Set the background colour of grid element to black
+    grid.style.background = 'black';
+});
 //5. If the user changes the value on the range slider, reset the sketchpad replacing all black grids back to white grids
 //Use event listener on the range slider and set event to input
+rangeSlider.addEventListener('input', () => {
     //Set counter variable to number of rows
+    let numRows = rangeSlider.value;
     //Loop from number of rows to 0
         //Delete the row element as grids are deleted automatically
         //Decrement the counter by 1 deleting next row element
@@ -91,3 +95,4 @@ grid.addEventListener('mousedown', () => grid.style.background = 'black');
             //Set the flex property of grid element to 1 that is even scaled within the row element
             //Increment counter by 1 to create next grid element
         //Increment counter by 1 to create next row element
+});
