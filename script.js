@@ -62,7 +62,6 @@ for(;rowCounter < gridValue;){
         //Increment counter by 1 to create next grid element
         colCounter++;
     }
-    //row.appendChild(grid);
     //Increment counter by 1 to create next row element
     rowCounter++;
 }
