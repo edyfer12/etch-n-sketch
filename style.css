@@ -31,6 +31,7 @@ h1{
     flex: 3;
     margin-left: 328px;
     margin-right: 50px;
+    display:flex;
 }
 
 /* Stylize the supplemental features adjacent to the sketchpad */
@@ -129,4 +130,9 @@ h2 {
 /*Stylize the paragraph that displays the grid values*/
 #gridValue{
     text-align: center;
+}
+
+/*Stylize the individual grid*/
+#sketchpad div{
+    flex:1;
 }
