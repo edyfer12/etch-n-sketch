@@ -32,6 +32,7 @@ h1{
     margin-left: 328px;
     margin-right: 50px;
     display:flex;
+    flex-direction: column;
 }
 
 /* Stylize the supplemental features adjacent to the sketchpad */
@@ -132,7 +133,7 @@ h2 {
     text-align: center;
 }
 
-/*Stylize the individual grid*/
+/*Stylize the row*/
 #sketchpad div{
     flex:1;
 }
