@@ -27,7 +27,7 @@ h1{
 }
 
 /* Stylize the sketchpad */
-#grid-container {
+#sketchpad {
     flex: 3;
     margin-left: 328px;
     margin-right: 50px;
