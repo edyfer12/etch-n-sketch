@@ -61,7 +61,6 @@ input[type="range"] {
 
 /*Stylize the color picker*/
 #color {
-    height: 55px;
     padding: 5px;
     border-radius: 10px;
 }
@@ -73,10 +72,10 @@ label{
 
 /*Stylize the clear button*/
 #clear {
-    margin: 10px 0px;
-    padding: 5px;
+    margin-top: 58px;
+    padding: 8px;
     font-size: 20px;
-    border-radius: 7.5px;
+    border-radius: 11.5px;
 }
 /*Stylize the container used to group the minimum value, maximum value and the slider*/
 .group-range {
