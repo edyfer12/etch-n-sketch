@@ -125,3 +125,8 @@ h2, h4 {
 h2 {
     margin-bottom: 25px;
 }
+
+/*Stylize the paragraph that displays the grid values*/
+#gridValue{
+    text-align: center;
+}
