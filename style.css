@@ -63,6 +63,7 @@ input[type="range"] {
 #color {
     height: 55px;
     padding: 5px;
+    border-radius: 10px;
 }
 /*Stylize the label element*/
 label{
