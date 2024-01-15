@@ -39,9 +39,7 @@ const sketchpad = document.querySelector('#sketchpad');
 //Loop from row 0 to a value of rows in the range slider value
 for(;rowCounter < gridValue;){
     //Create the row element 
-    const row = document.createElement('div');
-    //Display the row element 
-    sketchpad.appendChild(row);
+    let row = document.createElement('div');
     //Set the flex property of row element as 1 that is evenly scaled within the sketchpad
     row.style.flex = '1';
     //Set the class for the row element as row
@@ -52,26 +50,29 @@ for(;rowCounter < gridValue;){
     for(;colCounter < gridValue;){
 //3. Display the borders in black colour of 0.5 pixels for the grids
         //Create grid element
-        const grid = document.createElement('div');
+        let grid = document.createElement('div');
         //Display grid element
         row.appendChild(grid);
         //Set the flex property of grid element to 1 that is even scaled within the row element
         grid.style.flex = '1';
         //Set the class for the column element
         grid.classList = 'grid';
+        //4. If the user clicks and holds on the grid that is white and hovers, change the background color to black 
+        //Use event listener on the grid and set event to mousedown
+        grid.addEventListener('mouseover', (event) => {
+                //Set the background colour of grid element to black
+                grid.style.background = 'black';
+        });
         //Increment counter by 1 to create next grid element
         colCounter++;
     }
+    //Display the row element 
+    sketchpad.appendChild(row);
     //Increment counter by 1 to create next row element
     rowCounter++;
+    
 }
-//4. If the user clicks and holds on the grid that is not clicked and hovers, change the background color to black 
 //Exit loop
-//Use event listener on the grid and set event to mousedown
-grid.addEventListener('mousedown', () => {
-    //Set the background colour of grid element to black
-    grid.style.background = 'black';
-});
 //5. If the user changes the value on the range slider, reset the sketchpad replacing all black grids back to white grids
 //Use event listener on the range slider and set event to input
 rangeSlider.addEventListener('input', () => {
