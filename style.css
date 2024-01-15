@@ -23,6 +23,7 @@ h1{
 .features {
     display: flex;
     flex-direction: row;
+    height: 600px;
 }
 
 /* Stylize the sketchpad */
