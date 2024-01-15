@@ -116,7 +116,7 @@ img{
     background: none;
 }
 
-/*Stylize the subheading*/
-h4 {
+/*Stylize the subheadings*/
+h3, h4 {
     text-align: center;
 }
