@@ -9,5 +9,5 @@ const gridInput = document.querySelector('#gridValue');
 //When user clicks the button on the range slider, 
 rangeSlider.addEventListener('input', () => {
     //display the text content on the created element as current value of row multiplied by current value of column
-    gridInput.textContent = rangeSlider.value;
+    gridInput.textContent = rangeSlider.value + 'X' + rangeSlider.value;
 });
