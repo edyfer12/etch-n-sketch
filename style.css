@@ -97,8 +97,8 @@ span#max {
     padding-left: 3px;
 }
 
-/*Stylize the range slider, buttons and colour picker*/
-input[type="range"], input[type="color"], img{
+/*Stylize the range slider, button and image*/
+input[type="range"], input[type="color"], img, #clear{
     cursor:pointer;
 }
 
