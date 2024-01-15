@@ -134,6 +134,7 @@ h2 {
 }
 
 /*Stylize the row*/
-#sketchpad div{
+.row{
+    display: flex;
     flex:1;
 }
