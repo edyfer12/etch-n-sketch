@@ -97,7 +97,7 @@ span#max {
 }
 
 /*Stylize the range slider, buttons and colour picker*/
-input[type="range"], input[type="color"], button{
+input[type="range"], input[type="color"], img{
     cursor:pointer;
 }
 
