@@ -23,7 +23,6 @@ h1{
 .features {
     display: flex;
     flex-direction: row;
-    height: 600px;
 }
 
 /* Stylize the sketchpad */
@@ -68,6 +67,7 @@ input[type="range"] {
 label{
     font-size: 18px;
     text-align: center;
+    margin-bottom: 10px;
 }
 
 /*Stylize the clear button*/
