@@ -86,19 +86,15 @@ grids.forEach(grid => {
 });
 //5. If the user changes the value on the range slider,
 rangeSlider.addEventListener('input', () => {
-    //Remove all the rows and columns from the sketchpad
-//6. Display the rows and columns based on chosen number of grids on the sketchpad
+    //6.Replace all the rows and columns from the sketchpad
+    //Create an array that stores number of rows
+    //Set initial counter for rows to 0
+    //Loop from 0 to number of rows from the value in the range slider
+        //Replace the row
+        //Set initial counter for grid to 0
+        //Loop from 0 to number of columns from the value in the range slider
+            //Replace the grid
+            //Increment the counter by 1
+        //Increment the counter by 1
     //Exit loop
-    //Set the initial counter to 0 where it indicates the start of the row 
-    //Loop from row 0 to a value of rows in the range slider value
-        //Create the row element 
-        //Display the row element 
-        //Set the flex property of row element as 1 that is evenly scaled within the sketchpad
-        //Set the initial counter to 0 where it indicates the start of the column for each row
-        //Loop from column 0 to the value of the range slider
-            //Create grid element
-            //Display grid element
-            //Set the flex property of grid element to 1 that is even scaled within the row element
-            //Increment counter by 1 to create next grid element
-        //Increment counter by 1 to create next row element
 });
