@@ -7,6 +7,12 @@ const rangeSlider = document.querySelector('input[type="range"]');
 //Capture the reference of the paragraph element that shows the grid numbers as user drags the range slider thumb
 const gridInput = document.querySelector('#gridValue');
 
+//Set the toggle white color to true
+
+//If the user clicks on the eraser button,
+    //Set the toggle white colour to true
+
+
 /***************** ALGORITHM FOR SKETCHING THE PIXELATED IMAGE OR COLOURING ON THE SKETCHPAD *************************/
 /********This is where the range slider has been used************************** */
 //1. As a default, have the row as 1 and column as 1 as the default grid value on the range slider is 1 X 1
