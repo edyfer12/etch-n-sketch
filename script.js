@@ -102,6 +102,7 @@ rangeSlider.addEventListener('input', () => {
         //Set the eraser button activated to true
         eraserActivated = true;
     });
+    //Forbid the user from commencing the action to drag any elements displayed on the webpage
     window.addEventListener('dragstart',(event) => {
        event.preventDefault();
     });
@@ -136,8 +137,6 @@ rangeSlider.addEventListener('input', () => {
     grids.forEach(grid => {
         //4. If the user clicks and holds on the grid that is white and hovers, change the background color to black 
         //If the user hovers over the grids, 
-        //Prevent user from dragging on the grid
-        
         grid.addEventListener('mouseover', () => {
             //set background colour to black if mouse down toggle is activated
             /*if(mousedown){
