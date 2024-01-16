@@ -11,6 +11,8 @@ const eraser = document.querySelector('#eraser');
 
 //Set the eraser button activated to false
 let eraserActivated = false;
+//Forbid the user from commencing action to drag any elements featured on the webpage
+window.addEventListener('dragstart', (event) => event.preventDefault());
 //If the user clicks on the eraser button,
 eraser.addEventListener('click', () => {
     //Set the eraser button activated to true
