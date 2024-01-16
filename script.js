@@ -88,5 +88,11 @@ grids.forEach(grid => {
 const rows = Array.from(document.querySelectorAll('.row'));
 //5. If the user changes the value on the range slider,
 rangeSlider.addEventListener('input', () => {
-    
+    //Remove all the rows and columns
+    //Loop through each item in the array that store rows
+        //Loop through each item in the array that store grids
+            //Remove the grid per row
+        //Remove the row
+    //
+    //Create new rows and columns based on the range slider value
 });
