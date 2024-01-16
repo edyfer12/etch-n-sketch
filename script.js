@@ -57,12 +57,6 @@ for(;rowCounter < gridValue;){
         grid.style.flex = '1';
         //Set the class for the column element
         grid.classList = 'grid';
-        //4. If the user clicks and holds on the grid that is white and hovers, change the background color to black 
-        //Use event listener on the grid and set event to mousedown
-        grid.addEventListener('mouseover', (event) => {
-                //Set the background colour of grid element to black
-                grid.style.background = 'black';
-        });
         //Increment counter by 1 to create next grid element
         colCounter++;
     }
@@ -72,7 +66,16 @@ for(;rowCounter < gridValue;){
     rowCounter++;
     
 }
+
 //Exit loop
+//Capture the reference for the grid
+let grid = document.querySelector('.grid');
+//4. If the user clicks and holds on the grid that is white and hovers, change the background color to black 
+//Use event listener on the grid and set event to mousedown
+grid.addEventListener('mouseover', () => {
+        //Set the background colour of grid element to black
+        grid.style.background = 'black';
+});
 //5. If the user changes the value on the range slider, reset the sketchpad replacing all black grids back to white grids
 //Use event listener on the range slider and set event to input
 rangeSlider.addEventListener('input', () => {
