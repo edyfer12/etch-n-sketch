@@ -84,8 +84,7 @@ grids.forEach(grid => {
     //If the user clicks on the grid, set background colour to black and set the mouse down toggle to true
     grid.addEventListener('mousedown', () => {grid.style.background = 'black'; mousedown = true});
 });
-//5. If the user changes the value on the range slider, reset the sketchpad replacing all black grids back to white grids
-//Use event listener on the range slider and set event to input
+//5. If the user changes the value on the range slider,
 rangeSlider.addEventListener('input', () => {
     
 //6. Display the rows and columns based on chosen number of grids on the sketchpad
