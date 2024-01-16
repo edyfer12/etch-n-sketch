@@ -84,10 +84,11 @@ grids.forEach(grid => {
     //If the user clicks on the grid, set background colour to black and set the mouse down toggle to true
     grid.addEventListener('mousedown', () => {grid.style.background = 'black'; mousedown = true});
 });
+//Add an array so each array item can be iterated to each row
+const rows = Array.from(document.querySelectorAll('.row'));
 //5. If the user changes the value on the range slider,
 rangeSlider.addEventListener('input', () => {
     //6.Replace all the rows and columns from the sketchpad
-    //Create an array that stores number of rows
     //Set initial counter for rows to 0
     //Loop from 0 to number of rows from the value in the range slider
         //Replace the row
