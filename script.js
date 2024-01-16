@@ -66,15 +66,23 @@ for(;rowCounter < gridValue;){
     rowCounter++;
     
 }
-
-//Exit loop
+//Exit loop after all the rows and columns are created so user can use the mouse and clicks and hover on the grids to change 
+//background colour to black from white
 //Capture the reference for the grid
-let grid = document.querySelector('.grid');
-//4. If the user clicks and holds on the grid that is white and hovers, change the background color to black 
-//Use event listener on the grid and set event to mousedown
-grid.addEventListener('mouseover', () => {
-        //Set the background colour of grid element to black
-        grid.style.background = 'black';
+let gridReference = document.querySelectorAll('.grid');
+//Create an array that can store all the grids
+const grids = Array.from(gridReference);
+//Set the mouse down toggle to false
+let mousedown = false;
+//If the mouse buttons are released on any elements on the page,
+window.addEventListener('mouseup', () => mousedown = false);
+//Loop through the each individual grid within the array that store in all the grids
+grids.forEach(grid => {
+    //4. If the user clicks and holds on the grid that is white and hovers, change the background color to black 
+    //If the user hovers over the grids and the mouse down toggle is true, set background colour to black
+    grid.addEventListener('mouseover', () => {if(mousedown)grid.style.background = 'black'})
+    //If the user clicks on the grid, set background colour to black and set the mouse down toggle to true
+    grid.addEventListener('mousedown', () => {grid.style.background = 'black'; mousedown = true});
 });
 //5. If the user changes the value on the range slider, reset the sketchpad replacing all black grids back to white grids
 //Use event listener on the range slider and set event to input
