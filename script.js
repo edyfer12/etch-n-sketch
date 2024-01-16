@@ -87,10 +87,7 @@ grids.forEach(grid => {
 //5. If the user changes the value on the range slider, reset the sketchpad replacing all black grids back to white grids
 //Use event listener on the range slider and set event to input
 rangeSlider.addEventListener('input', () => {
-    //Set counter variable to number of rows
-    //Loop from number of rows to 0
-        //Delete the row element as grids are deleted automatically
-        //Decrement the counter by 1 deleting next row element
+    
 //6. Display the rows and columns based on chosen number of grids on the sketchpad
     //Exit loop
     //Set the initial counter to 0 where it indicates the start of the row 
