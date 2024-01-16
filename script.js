@@ -86,7 +86,7 @@ grids.forEach(grid => {
 });
 //5. If the user changes the value on the range slider,
 rangeSlider.addEventListener('input', () => {
-    
+    //Remove all the rows and columns from the sketchpad
 //6. Display the rows and columns based on chosen number of grids on the sketchpad
     //Exit loop
     //Set the initial counter to 0 where it indicates the start of the row 
