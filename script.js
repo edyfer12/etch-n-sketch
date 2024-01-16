@@ -88,14 +88,5 @@ grids.forEach(grid => {
 const rows = Array.from(document.querySelectorAll('.row'));
 //5. If the user changes the value on the range slider,
 rangeSlider.addEventListener('input', () => {
-    //6.Replace all the rows and columns from the sketchpad
-    //Set initial counter for rows to 0
-    //Loop from 0 to number of rows from the value in the range slider
-        //Replace the row
-        //Set initial counter for grid to 0
-        //Loop from 0 to number of columns from the value in the range slider
-            //Replace the grid
-            //Increment the counter by 1
-        //Increment the counter by 1
-    //Exit loop
+    
 });
