@@ -90,9 +90,11 @@ const rows = Array.from(document.querySelectorAll('.row'));
 rangeSlider.addEventListener('input', () => {
     //Remove all the rows and columns
     //Loop through each item in the array that store rows
+    rows.forEach(row => {
         //Loop through each item in the array that store grids
             //Remove the grid per row
         //Remove the row
     //
+    });
     //Create new rows and columns based on the range slider value
 });
