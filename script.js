@@ -88,7 +88,6 @@ grids.forEach(grid => {
 //Use event listener on the range slider and set event to input
 rangeSlider.addEventListener('input', () => {
     //Set counter variable to number of rows
-    let numRows = rangeSlider.value;
     //Loop from number of rows to 0
         //Delete the row element as grids are deleted automatically
         //Decrement the counter by 1 deleting next row element
