@@ -6,25 +6,6 @@
 const rangeSlider = document.querySelector('input[type="range"]');
 //Capture the reference of the paragraph element that shows the grid numbers as user drags the range slider thumb
 const gridInput = document.querySelector('#gridValue');
-//When user clicks the button on the range slider, 
-rangeSlider.addEventListener('input', () => {
-    //display the text content on the created element as current value of row multiplied by current value of column
-    gridInput.textContent = rangeSlider.value + 'X' + rangeSlider.value;
-});
-
-/* 
-    When the user clicks and hold on the individual grids in a sketchpad, colour changes go from white 
-    (default) to black to indicate that the image is drawn in pixelated style or coloured.
-*/
-//*********************************(1,1) DEFAULT ROW,COLUMN***********************************************************/
-//Capture the reference based on the sketchpad container containing rows and columns of grids
-/*const sketchpad = document.querySelector('#sketchpad');
-//Create an element based on one row and one column of the grid inside the sketchpad
-const grid = document.createElement('div');
-//Append the element displaying grid of square as the child element to the parent element, the sketchpad
-sketchpad.appendChild(grid);
-//When user clicks on the grid inside the sketchpad, change the background colour from white to black
-grid.addEventListener('click',() => grid.style.background = 'black');*/
 
 /***************** ALGORITHM FOR SKETCHING THE PIXELATED IMAGE OR COLOURING ON THE SKETCHPAD *************************/
 
@@ -71,7 +52,7 @@ for(;rowCounter < gridValue;){
 //Capture the reference for the grid
 let gridReference = document.querySelectorAll('.grid');
 //Create an array that can store all the grids
-const grids = Array.from(gridReference);
+let grids = Array.from(gridReference);
 //Set the mouse down toggle to false
 let mousedown = false;
 //If the mouse buttons are released on any elements on the page,
@@ -85,16 +66,58 @@ grids.forEach(grid => {
     grid.addEventListener('mousedown', () => {grid.style.background = 'black'; mousedown = true});
 });
 //Add an array so each array item can be iterated to each row
-const rows = Array.from(document.querySelectorAll('.row'));
+let rows = Array.from(document.querySelectorAll('.row'));
+//Store the original value from the range slider
+//let originalRangeSliderValue = rangeSlider.value;
 //5. If the user changes the value on the range slider,
-rangeSlider.addEventListener('input', () => {
+rangeSlider.addEventListener('input', () => {//display the text content on the created element as current value of row multiplied by current value of column
+    gridInput.textContent = rangeSlider.value + 'X' + rangeSlider.value;
     //Remove all the rows and columns
     //Loop through each item in the array that store rows
     rows.forEach(row => {
         //Loop through each item in the array that store grids
-            //Remove the grid per row
-        //Remove the row
-    //
+        grids.forEach(grid => {
+            //Remove the grid per row on the sketchpad
+            grid.remove();
+        });
+        //Remove the row once all the grids are removed and move to the next row
+        row.remove();
     });
+
+    //Empty both arrays
+    rows = [];
+    grids = [];
+
     //Create new rows and columns based on the range slider value
+    //Set the row counter to 0
+    let rowCounter = 0;
+    //Loop from 0 to the current range value for row
+    for(;rowCounter < rangeSlider.value;){
+        //Create row element
+        let row = document.createElement('div');
+        //Set class of row element to row
+        row.classList = 'row';
+        row.style.flex = '1';
+        //Display the row element that was already created
+        sketchpad.appendChild(row);
+        //Set grid counter to 0
+        let gridCounter = 0;
+        //Loop from 0 to the current range value for the grid
+        for(;gridCounter< rangeSlider.value;){
+            //Create grid element
+            let grid = document.createElement('div');
+            //Set class of grid element to grid
+            grid.classList = 'grid';
+            grid.style.flex = '1';
+            //Display the grid element that was already created
+            row.appendChild(grid);
+            //Increment grid counter by 1
+            gridCounter++;
+        }
+        //Increment row counter by 1
+        rowCounter++;
+    }
+    //Exit loop
+    //rows = Array.from(document.querySelectorAll('row'));
+    //grids = Array.from(document.querySelectorAll('grid'));
 });
