@@ -105,6 +105,5 @@ rangeSlider.addEventListener('input', () => {
         grid.addEventListener('mouseover', () => {if(mousedown)grid.style.background = 'black'})
         //If the user clicks on the grid, set background colour to black and set the mouse down toggle to true
         grid.addEventListener('mousedown', () => {grid.style.background = 'black'; mousedown = true});
-});
-
+    });
 });
