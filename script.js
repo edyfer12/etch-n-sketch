@@ -6,11 +6,16 @@
 const rangeSlider = document.querySelector('input[type="range"]');
 //Capture the reference of the paragraph element that shows the grid numbers as user drags the range slider thumb
 const gridInput = document.querySelector('#gridValue');
+//Capture the reference of the eraser button
+const eraser = document.querySelector('#eraser');
 
-//Set the toggle white color to true
-
+//Set the eraser button activated to false
+let eraserActivated = false;
 //If the user clicks on the eraser button,
-    //Set the toggle white colour to true
+eraser.addEventListener('click', () => {
+    //Set the eraser button activated to true
+    eraserActivated = true;
+});
 
 
 /***************** ALGORITHM FOR SKETCHING THE PIXELATED IMAGE OR COLOURING ON THE SKETCHPAD *************************/
@@ -66,10 +71,23 @@ window.addEventListener('mouseup', () => mousedown = false);
 //Loop through the each individual grid within the array that store in all the grids
 grids.forEach(grid => {
     //4. If the user clicks and holds on the grid that is white and hovers, change the background color to black 
-    //If the user hovers over the grids and the mouse down toggle is true, set background colour to black
-    grid.addEventListener('mouseover', () => {if(mousedown)grid.style.background = 'black'})
+    //If the user hovers over the grids and the mouse down toggle is true and eraser button is not clicked, 
+    //set background colour to black
+    grid.addEventListener('mouseover', () => {
+        if(mousedown){
+            grid.style.background = 'black';
+        }
+    })
     //If the user clicks on the grid, set background colour to black and set the mouse down toggle to true
-    grid.addEventListener('mousedown', () => {grid.style.background = 'black'; mousedown = true});
+    grid.addEventListener('mousedown', () => {
+        grid.style.background = 'black'; 
+        //if the grid background colour is black and eraser button is activated,
+        if(grid.style.background === 'black' && eraserActivated){
+            //set the background colour to white
+            grid.style.background = 'white';
+        }
+        mousedown = true;
+    });
 });
 
 //Add an array so each array item can be iterated to each row
@@ -78,6 +96,16 @@ let rows = Array.from(document.querySelectorAll('.row'));
 /********************This is where the range slider is used***************************************************** */
 //5. If the user changes the value on the range slider,
 rangeSlider.addEventListener('input', () => {
+    eraserActivated = false;
+    //If the user clicks on the eraser button,
+    eraser.addEventListener('click', () => {
+        //Set the eraser button activated to true
+        eraserActivated = true;
+    });
+    window.addEventListener('dragstart',(event) => {
+       event.preventDefault();
+    });
+
     //display the text content on the created element as current value of row multiplied by current value of column
     gridInput.textContent = rangeSlider.value + 'X' + rangeSlider.value;
     //Remove all the rows that will automatically remove the grid elements
@@ -107,9 +135,37 @@ rangeSlider.addEventListener('input', () => {
     //Loop through the each individual grid within the array that store in all the grids
     grids.forEach(grid => {
         //4. If the user clicks and holds on the grid that is white and hovers, change the background color to black 
-        //If the user hovers over the grids and the mouse down toggle is true, set background colour to black
-        grid.addEventListener('mouseover', () => {if(mousedown)grid.style.background = 'black'})
+        //If the user hovers over the grids, 
+        //Prevent user from dragging on the grid
+        
+        grid.addEventListener('mouseover', () => {
+            //set background colour to black if mouse down toggle is activated
+            /*if(mousedown){
+                grid.style.background = 'black';
+            }*/
+            //Set background colour to white if mouse down and eraser button is activated
+            if(mousedown && eraserActivated){
+                grid.style.background = 'white';
+            }
+            //Set background colour to black if mouse down toggle is activated and eraser toggle is off
+            else if(mousedown && !eraserActivated){
+                grid.style.background = 'black';
+            }
+
+        });
         //If the user clicks on the grid, set background colour to black and set the mouse down toggle to true
-        grid.addEventListener('mousedown', () => {grid.style.background = 'black'; mousedown = true});
+        grid.addEventListener('mousedown', () => {
+            //If the eraser button is activated, set the background colour to white
+            if(eraserActivated){
+                grid.style.background = 'white';   
+            }
+            
+            //if not, set the background colour to black
+            else{
+                grid.style.background = 'black';
+            }
+            mousedown = true;
+        });
+        
     });
 });
