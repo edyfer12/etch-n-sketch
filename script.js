@@ -12,6 +12,8 @@ const eraser = document.querySelector('#eraser');
 const palette = document.querySelector('#color');
 //Capture the reference of the clear button
 const clear = document.querySelector('#clear');
+//Capture the reference of the toggle grid lines button
+const toggleGrid = document.querySelector('#toggleGrid');
 
 //Set the colour palette activated to true
 let paletteActivated = true;
@@ -112,6 +114,16 @@ grids.forEach(grid => {
         }
         mousedown = true;
     });
+    //Set the displayed grid lines to true
+    //If the user clicks on the toggle grid lines button,
+        //Loop through each item in the array for grids
+            //If the displayed grid lines is true,
+                //Set the border to none
+                //Set the displayed grid lines to false
+            //If the displayed grid lines is false,
+                //Set border to 0.5px solid black
+                //Set the displayed grid lines to true
+
 });
 //If the user clicks the clear button,
 clear.addEventListener('click', () => {
@@ -209,6 +221,16 @@ rangeSlider.addEventListener('input', () => {
         });
         
     });
+    //Set the displayed grid lines to true
+    //If the user clicks on the toggle grid lines button,
+        //Loop through each item in the array for grids
+            //If the displayed grid lines is true,
+                //Set the border to none
+                //Set the displayed grid lines to false
+            //If the displayed grid lines is false,
+                //Set border to 0.5px solid black
+                //Set the displayed grid lines to true
+
     //If the user clicks the clear button,
     clear.addEventListener('click', () => {
     //Loop through each item of the grids array
