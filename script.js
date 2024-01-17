@@ -11,6 +11,7 @@ const eraser = document.querySelector('#eraser');
 //Capture the reference of the colour palette button
 const palette = document.querySelector('#color');
 //Capture the reference of the clear button
+const clear = document.querySelector('#clear');
 
 //Set the colour palette activated to true
 let paletteActivated = true;
@@ -113,9 +114,15 @@ grids.forEach(grid => {
     });
 });
 //If the user clicks the clear button,
+clear.addEventListener('click', () => {
     //Loop through each item of the grids array
+    grids.forEach(grid => {
         //If background colour is not white, set to white
-
+        if(grid.style.background !== 'white'){
+            grid.style.background = 'white';
+        }
+    });
+});
 //Add an array so each array item can be iterated to each row
 let rows = Array.from(document.querySelectorAll('.row'));
 
