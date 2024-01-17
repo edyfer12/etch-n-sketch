@@ -48,39 +48,8 @@ let gridValue = rangeSlider.value;
 let rowCounter = 0; 
 //Refer to the sketchpad
 const sketchpad = document.querySelector('#sketchpad');
-//Loop from row 0 to a value of rows in the range slider value
-for(;rowCounter < gridValue;){
-    //Create the row element 
-    let row = document.createElement('div');
-    //Set the flex property of row element as 1 that is evenly scaled within the sketchpad
-    row.style.flex = '1';
-    //Set the class for the row element as row
-    row.classList = 'row';
-    //Set the initial counter to 0 where it indicates the start of the column for each row
-    let colCounter = 0;
-    //Loop from column 0 to the value of the range slider
-    for(;colCounter < gridValue;){
-        //Create grid element
-        let grid = document.createElement('div');
-        //Display grid element
-        row.appendChild(grid);
-        //Set the flex property of grid element to 1 that is even scaled within the row element
-        grid.style.flex = '1';
-        //Set the class for the column element
-        grid.classList = 'grid';
-        //Display the border for the grid as 0.5px solid black
-        grid.style.border = '0.5px solid black';
-        //Increment counter by 1 to create next grid element
-        colCounter++;
-    }
-    //Display the row element 
-    sketchpad.appendChild(row);
-    //Increment counter by 1 to create next row element
-    rowCounter++;
-    
-}
-//Exit loop after all the rows and columns are created so user can use the mouse and clicks and hover on the grids to change 
-//background colour to black from white
+//Create and display rows and grids using JavaScript
+createElement(sketchpad);
 //Capture the reference for the grid
 let gridReference = document.querySelectorAll('.grid');
 //Create an array that can store all the grids
@@ -116,9 +85,6 @@ grids.forEach(grid => {
         mousedown = true;
     });
 });
-
-
-
 
 //If the user clicks the clear button,
 clear.addEventListener('click', () => {
@@ -247,3 +213,37 @@ toggleGrid.addEventListener('click', () => {
     });
 });
 
+function createElement(sketchpad){
+    let rowCounter = 0;
+    //Loop from row 0 to a value of rows in the range slider value
+    for(;rowCounter < gridValue;){
+        //Create the row element 
+        let row = document.createElement('div');
+        //Set the flex property of row element as 1 that is evenly scaled within the sketchpad
+        row.style.flex = '1';
+        //Set the class for the row element as row
+        row.classList = 'row';
+        //Set the initial counter to 0 where it indicates the start of the column for each row
+        let colCounter = 0;
+        //Loop from column 0 to the value of the range slider
+        for(;colCounter < gridValue;){
+            //Create grid element
+            let grid = document.createElement('div');
+            //Display grid element
+            row.appendChild(grid);
+            //Set the flex property of grid element to 1 that is even scaled within the row element
+            grid.style.flex = '1';
+            //Set the class for the column element
+            grid.classList = 'grid';
+            //Display the border for the grid as 0.5px solid black
+            grid.style.border = '0.5px solid black';
+            //Increment counter by 1 to create next grid element
+            colCounter++;
+        }
+    //Display the row element 
+    sketchpad.appendChild(row);
+    //Increment counter by 1 to create next row element
+    rowCounter++;
+    
+}
+}
