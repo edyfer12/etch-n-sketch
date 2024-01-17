@@ -8,7 +8,11 @@ const rangeSlider = document.querySelector('input[type="range"]');
 const gridInput = document.querySelector('#gridValue');
 //Capture the reference of the eraser button
 const eraser = document.querySelector('#eraser');
+//Capture the reference of the colour palette button
+const palette = document.querySelector('#color');
 
+//Set the colour palette activated to true
+let paletteActivated = true;
 //Set the eraser button activated to false
 let eraserActivated = false;
 //Forbid the user from commencing action to drag any elements featured on the webpage
@@ -17,8 +21,17 @@ window.addEventListener('dragstart', (event) => event.preventDefault());
 eraser.addEventListener('click', () => {
     //Set the eraser button activated to true
     eraserActivated = true;
+    //Set the colour palette activated to false
+    paletteActivated = false;
 });
 
+//If the user selects the colour on the palette,
+palette.addEventListener('click', () =>{
+    //Set the eraser button activated to false
+    eraserActivated = false;
+    //Set the colour palette activated to true
+    paletteActivated = true;
+});
 
 /***************** ALGORITHM FOR SKETCHING THE PIXELATED IMAGE OR COLOURING ON THE SKETCHPAD *************************/
 /********This is where the range slider has been used************************** */
@@ -72,21 +85,27 @@ let mousedown = false;
 window.addEventListener('mouseup', () => mousedown = false);
 //Loop through the each individual grid within the array that store in all the grids
 grids.forEach(grid => {
-    //4. If the user clicks and holds on the grid that is white and hovers, change the background color to black 
-    //If the user hovers over the grids and the mouse down toggle is true and eraser button is not clicked, 
-    //set background colour to black
+    //If the user hovers over the grids,
     grid.addEventListener('mouseover', () => {
-        if(mousedown){
-            grid.style.background = 'black';
+        //if both the mouse down and eraser toggle is activated, set background colour to white
+        if(mousedown && eraserActivated){
+            grid.style.background = 'white';
+        }
+        //if eraser toggle is off, mouse down toggle is activated and colour palette activated is on, 
+        //set background colour based on the color picker value
+        else if(mousedown && paletteActivated &&!eraserActivated){
+            grid.style.background = palette.value;
         }
     })
     //If the user clicks on the grid, set background colour to black and set the mouse down toggle to true
     grid.addEventListener('mousedown', () => {
-        grid.style.background = 'black'; 
-        //if the grid background colour is black and eraser button is activated,
-        if(grid.style.background === 'black' && eraserActivated){
-            //set the background colour to white
-            grid.style.background = 'white';
+        //if the eraser toggle is activated, set background colour to white
+        if(eraserActivated){
+            grid.style.background = 'white'; 
+        }
+        //if eraser toggle is off and colour palette activated is on, set background colour based on the color picker value
+        else if(paletteActivated && !eraserActivated){
+            grid.style.background = palette.value;
         }
         mousedown = true;
     });
@@ -98,7 +117,17 @@ let rows = Array.from(document.querySelectorAll('.row'));
 /********************This is where the range slider is used***************************************************** */
 //5. If the user changes the value on the range slider,
 rangeSlider.addEventListener('input', () => {
+    //Set the colour palette activated to true
+    let paletteActivated = true;
+    //Set the eraser activated toggle to false
     eraserActivated = false;
+    //If the user selects the colour on the palette,
+    palette.addEventListener('click', () =>{
+        //Set the eraser button activated to false
+        eraserActivated = false;
+        //Set the colour palette activated to true
+        paletteActivated = true;
+    });
     //If the user clicks on the eraser button,
     eraser.addEventListener('click', () => {
         //Set the eraser button activated to true
@@ -148,11 +177,11 @@ rangeSlider.addEventListener('input', () => {
             if(mousedown && eraserActivated){
                 grid.style.background = 'white';
             }
-            //Set background colour to black if mouse down toggle is activated and eraser toggle is off
-            else if(mousedown && !eraserActivated){
-                grid.style.background = 'black';
+            //if eraser toggle is off, mouse down toggle is activated and colour palette activated is on, 
+            //set background colour based on the color picker value
+            else if(mousedown && paletteActivated && !eraserActivated){
+                grid.style.background = palette.value;
             }
-
         });
         //If the user clicks on the grid, set background colour to black and set the mouse down toggle to true
         grid.addEventListener('mousedown', () => {
@@ -160,10 +189,9 @@ rangeSlider.addEventListener('input', () => {
             if(eraserActivated){
                 grid.style.background = 'white';   
             }
-            
-            //if not, set the background colour to black
-            else{
-                grid.style.background = 'black';
+            //if eraser toggle is off and colour palette activated is on, set background colour based on the color picker value
+            else if(paletteActivated && !eraserActivated){
+                grid.style.background = palette.value;
             }
             mousedown = true;
         });
