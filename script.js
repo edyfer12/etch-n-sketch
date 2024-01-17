@@ -69,6 +69,7 @@ for(;rowCounter < gridValue;){
         grid.style.flex = '1';
         //Set the class for the column element
         grid.classList = 'grid';
+        grid.style.border = '0.5px solid black';
         //Increment counter by 1 to create next grid element
         colCounter++;
     }
@@ -114,17 +115,10 @@ grids.forEach(grid => {
         }
         mousedown = true;
     });
-    //Set the displayed grid lines to true
-    //If the user clicks on the toggle grid lines button,
-        //Loop through each item in the array for grids
-            //If the displayed grid lines is true,
-                //Set the border to none
-                //Set the displayed grid lines to false
-            //If the displayed grid lines is false,
-                //Set border to 0.5px solid black
-                //Set the displayed grid lines to true
-
 });
+
+
+
 //If the user clicks the clear button,
 clear.addEventListener('click', () => {
     //Loop through each item of the grids array
@@ -184,6 +178,7 @@ rangeSlider.addEventListener('input', () => {
     //Add arrays so next time the user plays with the range slider all the div elements are stored
     rows = Array.from(document.querySelectorAll('.row'));
     grids = Array.from(document.querySelectorAll('.grid'));
+    
     //Set the mouse down toggle to false
     let mousedown = false;
     //If the mouse buttons are released on any elements on the page,
@@ -221,24 +216,31 @@ rangeSlider.addEventListener('input', () => {
         });
         
     });
-    //Set the displayed grid lines to true
-    //If the user clicks on the toggle grid lines button,
-        //Loop through each item in the array for grids
-            //If the displayed grid lines is true,
-                //Set the border to none
-                //Set the displayed grid lines to false
-            //If the displayed grid lines is false,
-                //Set border to 0.5px solid black
-                //Set the displayed grid lines to true
 
     //If the user clicks the clear button,
     clear.addEventListener('click', () => {
-    //Loop through each item of the grids array
-    grids.forEach(grid => {
-        //If background colour is not white, set to white
-        if(grid.style.background !== 'white'){
-            grid.style.background = 'white';
-        }
+        //Loop through each item of the grids array
+        grids.forEach(grid => {
+            //If background colour is not white, set to white
+            if(grid.style.background !== 'white'){
+                grid.style.background = 'white';
+            }
+        });
     });
 });
+//If user clicks on the toggle grids button
+toggleGrid.addEventListener('click', () => {
+    //Loop through each item in the grids array
+    grids.forEach(grid => {
+        //If border is 0.5px solid black for grid item,
+        if(grid.style.border === '0.5px solid black'){
+            //Set border to none
+            grid.style.border = 'none';
+        }
+        //Otherwise, if border is none for grid item,
+        else {
+            //Set border to 0.5px solid black
+            grid.style.border = '0.5px solid black';
+        }
+    });
 });
