@@ -78,10 +78,6 @@ for(;rowCounter < gridValue;){
     //Increment counter by 1 to create next row element
     rowCounter++;
 }
-//Display the row element 
-sketchpad.appendChild(row);
-//Increment counter by 1 to create next row element
-rowCounter++;
 //Capture the reference for the grid
 let gridReference = document.querySelectorAll('.grid');
 //Create an array that can store all the grids
