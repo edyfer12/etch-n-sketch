@@ -1,6 +1,5 @@
 /* Stylize the universal selector for all HTML elements */
 * {
-    border: 1px solid black;
     margin: 0;
     padding: 0;
     box-sizing: border-box;
@@ -41,6 +40,7 @@ h1{
     flex-direction: column;
     flex: 1;
     min-width: 265px;
+    padding-right: 45px;
 }
 
 /* Stylize the instruction located at the bottom of the sketchpad */
@@ -137,4 +137,8 @@ h2 {
 .row{
     display: flex;
     flex:1;
+}
+/*Stylize the grids*/
+.grid{
+    border: 0.5px solid black;
 }
