@@ -139,10 +139,6 @@ h2 {
     display: flex;
     flex:1;
 }
-/*Stylize the grids*/
-.grid{
-    border: 0.5px solid black;
-}
 /*Stylize the grouping selectors for both the clear and toggle grid lines button*/
 #clear, #toggleGrid {
     margin-top: 58px;
