@@ -143,3 +143,11 @@ h2 {
 .grid{
     border: 0.5px solid black;
 }
+/*Stylize the grouping selectors for both the clear and toggle grid lines button*/
+#clear, #toggleGrid {
+    margin-top: 58px;
+    padding: 8px;
+    font-size: 20px;
+    border-radius: 11.5px;
+    cursor: pointer;
+}
