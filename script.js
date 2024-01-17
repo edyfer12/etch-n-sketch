@@ -10,6 +10,7 @@ const gridInput = document.querySelector('#gridValue');
 const eraser = document.querySelector('#eraser');
 //Capture the reference of the colour palette button
 const palette = document.querySelector('#color');
+//Capture the reference of the clear button
 
 //Set the colour palette activated to true
 let paletteActivated = true;
@@ -32,6 +33,7 @@ palette.addEventListener('click', () =>{
     //Set the colour palette activated to true
     paletteActivated = true;
 });
+
 
 /***************** ALGORITHM FOR SKETCHING THE PIXELATED IMAGE OR COLOURING ON THE SKETCHPAD *************************/
 /********This is where the range slider has been used************************** */
@@ -110,6 +112,9 @@ grids.forEach(grid => {
         mousedown = true;
     });
 });
+//If the user clicks the clear button,
+    //Loop through each item of the grids array
+        //If background colour is not white, set to white
 
 //Add an array so each array item can be iterated to each row
 let rows = Array.from(document.querySelectorAll('.row'));
