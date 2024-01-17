@@ -48,8 +48,40 @@ let gridValue = rangeSlider.value;
 let rowCounter = 0; 
 //Refer to the sketchpad
 const sketchpad = document.querySelector('#sketchpad');
-//Create and display rows and grids using JavaScript
-createElement(sketchpad);
+//Loop from row 0 to a value of rows in the range slider value
+for(;rowCounter < gridValue;){
+    //Create the row element 
+    let row = document.createElement('div');
+    //Set the flex property of row element as 1 that is evenly scaled within the sketchpad
+    row.style.flex = '1';
+    //Set the class for the row element as row
+    row.classList = 'row';
+    //Set the initial counter to 0 where it indicates the start of the column for each row
+    let colCounter = 0;
+    //Loop from column 0 to the value of the range slider
+    for(;colCounter < gridValue;){
+        //Create grid element
+        let grid = document.createElement('div');
+        //Display grid element
+        row.appendChild(grid);
+        //Set the flex property of grid element to 1 that is even scaled within the row element
+        grid.style.flex = '1';
+        //Set the class for the column element
+        grid.classList = 'grid';
+        //Display the border for the grid as 0.5px solid black
+        grid.style.border = '0.5px solid black';
+        //Increment counter by 1 to create next grid element
+        colCounter++;
+    }
+    //Display the row element 
+    sketchpad.appendChild(row);
+    //Increment counter by 1 to create next row element
+    rowCounter++;
+}
+//Display the row element 
+sketchpad.appendChild(row);
+//Increment counter by 1 to create next row element
+rowCounter++;
 //Capture the reference for the grid
 let gridReference = document.querySelectorAll('.grid');
 //Create an array that can store all the grids
@@ -71,7 +103,7 @@ grids.forEach(grid => {
         else if(mousedown && paletteActivated &&!eraserActivated){
             grid.style.background = palette.value;
         }
-    })
+    });
     //If the user clicks on the grid, set background colour to black and set the mouse down toggle to true
     grid.addEventListener('mousedown', () => {
         //if the eraser toggle is activated, set background colour to white
@@ -212,38 +244,3 @@ toggleGrid.addEventListener('click', () => {
         }
     });
 });
-
-function createElement(sketchpad){
-    let rowCounter = 0;
-    //Loop from row 0 to a value of rows in the range slider value
-    for(;rowCounter < gridValue;){
-        //Create the row element 
-        let row = document.createElement('div');
-        //Set the flex property of row element as 1 that is evenly scaled within the sketchpad
-        row.style.flex = '1';
-        //Set the class for the row element as row
-        row.classList = 'row';
-        //Set the initial counter to 0 where it indicates the start of the column for each row
-        let colCounter = 0;
-        //Loop from column 0 to the value of the range slider
-        for(;colCounter < gridValue;){
-            //Create grid element
-            let grid = document.createElement('div');
-            //Display grid element
-            row.appendChild(grid);
-            //Set the flex property of grid element to 1 that is even scaled within the row element
-            grid.style.flex = '1';
-            //Set the class for the column element
-            grid.classList = 'grid';
-            //Display the border for the grid as 0.5px solid black
-            grid.style.border = '0.5px solid black';
-            //Increment counter by 1 to create next grid element
-            colCounter++;
-        }
-    //Display the row element 
-    sketchpad.appendChild(row);
-    //Increment counter by 1 to create next row element
-    rowCounter++;
-    
-}
-}
