@@ -60,7 +60,6 @@ for(;rowCounter < gridValue;){
     let colCounter = 0;
     //Loop from column 0 to the value of the range slider
     for(;colCounter < gridValue;){
-//3. Display the borders in black colour of 0.5 pixels for the grids
         //Create grid element
         let grid = document.createElement('div');
         //Display grid element
@@ -69,6 +68,7 @@ for(;rowCounter < gridValue;){
         grid.style.flex = '1';
         //Set the class for the column element
         grid.classList = 'grid';
+        //Display the border for the grid as 0.5px solid black
         grid.style.border = '0.5px solid black';
         //Increment counter by 1 to create next grid element
         colCounter++;
@@ -82,7 +82,7 @@ for(;rowCounter < gridValue;){
 //Exit loop after all the rows and columns are created so user can use the mouse and clicks and hover on the grids to change 
 //background colour to black from white
 //Capture the reference for the grid
-gridReference = document.querySelectorAll('.grid');
+let gridReference = document.querySelectorAll('.grid');
 //Create an array that can store all the grids
 let grids = Array.from(gridReference);
 //Set the mouse down toggle to false
@@ -116,6 +116,7 @@ grids.forEach(grid => {
         mousedown = true;
     });
 });
+
 
 
 
@@ -172,6 +173,7 @@ rangeSlider.addEventListener('input', () => {
             let gridItem = document.createElement('div');
             gridItem.classList = 'grid';
             gridItem.style.flex = '1';
+            gridItem.style.border = '0.5px solid black';
             rowItem.appendChild(gridItem);
         }
     }
@@ -244,3 +246,4 @@ toggleGrid.addEventListener('click', () => {
         }
     });
 });
+
