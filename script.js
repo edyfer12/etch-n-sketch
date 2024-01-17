@@ -209,4 +209,14 @@ rangeSlider.addEventListener('input', () => {
         });
         
     });
+    //If the user clicks the clear button,
+    clear.addEventListener('click', () => {
+    //Loop through each item of the grids array
+    grids.forEach(grid => {
+        //If background colour is not white, set to white
+        if(grid.style.background !== 'white'){
+            grid.style.background = 'white';
+        }
+    });
+});
 });
