@@ -178,6 +178,9 @@ rangeSlider.addEventListener('input', () => {
     //Set the mouse down toggle to false
     let mousedown = false;
 
+    //If the mouse buttons are released on any elements on the page,
+    window.addEventListener('mouseup', () => mousedown = false);
+
     //Loop through the each individual grid within the array that store in all the grids
     grids.forEach(grid => {
         //4. If the user clicks and holds on the grid that is white and hovers, change the background color to black 
