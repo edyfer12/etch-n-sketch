@@ -183,10 +183,6 @@ rangeSlider.addEventListener('input', () => {
         //4. If the user clicks and holds on the grid that is white and hovers, change the background color to black 
         //If the user hovers over the grids, 
         grid.addEventListener('mouseover', () => {
-            //set background colour to black if mouse down toggle is activated
-            /*if(mousedown){
-                grid.style.background = 'black';
-            }*/
             //Set background colour to white if mouse down and eraser button is activated
             if(mousedown && eraserActivated){
                 grid.style.background = 'white';
