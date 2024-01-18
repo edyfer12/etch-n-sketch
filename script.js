@@ -208,9 +208,6 @@ rangeSlider.addEventListener('input', () => {
             }
             mousedown = true;
         });
-        //If the user releases the mouse button, then set the mouse down toggle button back to false
-        grid.addEventListener('mouseup', () => mousedown = false);
-        
     });
 
     //If the user clicks the clear button,
